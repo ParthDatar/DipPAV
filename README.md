@@ -70,9 +70,9 @@ conda activate LSHvec
 python3 DipPAV_step2.py \
 --file_prefix NA24385_aligned_by_ngmlr_chr21 \
 --output_dir DipPAV_chr21_result/ \
---num_bucket 20000000 \
---kmer_size 15 \
---dim 200 
+--num_bucket 1024 \
+--kmer_size 16 \
+--dim 100 
 conda deactivate
 ```
 #### *Required parameters
@@ -82,11 +82,11 @@ conda deactivate
 
 #### *Optional parameters
 
-**--num_bucket:** number of bucket to store the kmers in LSH step (5000-20000000). Default = 20000000.
+**--num_bucket:** number of bucket to store the kmers in LSH step. Recommended = 1024. Default = 2000000.
 
-**--kmer_size:** size of kmer used for kmer embedding (10-45). Default = 15.
+**--kmer_size:** size of kmer used for kmer embedding (10-128). Recommended = 16-128. Default = 10.
 
-**--dim:** dimension of features to represent kmers (50-400). Default = 200.
+**--dim:** dimension of features to represent kmers (50-400). Recommended = 100. Default = 200.
 
 
 ### Step 3
